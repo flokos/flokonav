@@ -1,0 +1,3 @@
+
+#!/bin/bash
+gpspipe -r -o logfile$RANDOM.nmea
