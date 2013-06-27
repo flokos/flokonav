@@ -1,5 +1,5 @@
 
 #!/bin/bash
 
-gpspipe -r -t -T %% -o logfile$1.nmea
+gpspipe -r -t -T %% -o /home/pi/logfile$1.nmea
 

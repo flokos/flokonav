@@ -13,6 +13,7 @@ term_sension()
 trap  term_sension INT
 gps-start
 sension_id=$RANDOM
+echo -e "Gps recording started."
 gps-record $sension_id
 
 

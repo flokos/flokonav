@@ -1,4 +1,4 @@
 #!/bin/bash
-gpsbabel -s -r -t  -w  -i nmea -f logfile$1.nmea -o kml -F /home/pi/logfile$1.kml
-echo "File conrverted  from nmea to kml .\n"
+gpsbabel -s -r -t  -w  -i nmea -f /home/pi/logfile$1.nmea -o kml -F /home/pi/logfile$1.kml
+echo -e "File conrverted  from nmea to kml ."
 
