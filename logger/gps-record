@@ -1,5 +1,5 @@
 
 #!/bin/bash
-sension_id = RANDOM;
-gpspipe -r -o logfile$sension_id.nmea
-export sension_id
+
+gpspipe -r -t -T %% -o logfile$1.nmea
+
