@@ -1,3 +1,23 @@
+
 #!/bin/bash
+term_sension()
+{
+        echo -e  "Recording Terminated."
+        echo -e "NMEA file saved."
+        nmea2kml $sension_id
+        echo -e "KML file created."
+        gps-stop
+        echo -e "gps-logger terminated."
+        echo -e "Cya dudes!!!."
+}
+trap  term_sension INT
 gps-start
-gps-record
+sension_id=$RANDOM
+gps-record $sension_id
+
+
+exit 0
+
+
+
+
