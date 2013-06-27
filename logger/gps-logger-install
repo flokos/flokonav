@@ -5,17 +5,21 @@ chmod +x gps-logger
 chmod +x gps-start
 chmod +x gps-stop
 chmod +x gps-record
+chmod +x nmea2kml
 sudo cp gps-logger /usr/bin/gps-logger
 sudo cp gps-start /usr/bin/gps-start
 sudo cp gps-stop /usr/bin/gps-stop
 sudo cp gps-record /usr/bin/gps-record
+sudo cp nmea2kml  /usr/bin/nmea2kml
 sudo cp gps-logger /usr/local/bin
 sudo cp gps-start /usr/local/bin
 sudo cp gps-stop /usr/local/bin
 sudo cp gps-record /usr/local/bin
+sudo cp nmea2kml /usr/local/bin
 rm gps-logger
 rm gps-start
 rm gps-stop
 rm gps-record
 rm gps-logger-install
+rm nmea2kml
 

@@ -1,3 +1,5 @@
 
 #!/bin/bash
-gpspipe -r -o logfile$RANDOM.nmea
+sension_id = RANDOM;
+gpspipe -r -o logfile$sension_id.nmea
+export sension_id
