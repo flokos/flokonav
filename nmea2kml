@@ -1,5 +1,0 @@
-#!/bin/bash
-
-gpsbabel -s -r -t  -w  -i nmea -f logfile$1.nmea -o kml -F /home/pi/logfile$1.kml
-
-

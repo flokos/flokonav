@@ -1,7 +1,0 @@
-
-#!/bin/bash
-
-
-gpspipe -r   -o logfile$1.nmea
-
-
