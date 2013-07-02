@@ -63,7 +63,8 @@ void get_fix_time(char *inData,char *fix_time){
 	int type = get_type(*inData);//get the sentence type 
 	int digits;//position index in the fix_time array
 	int count;//counts the 2 digits cycle to fill the fix_time array
-        if(type == 1 || type == 4){//test if type of the sentence is either gpgga or gprmc
+       	int pos;//index to the inData array
+	 if(type == 1 || type == 4){//test if type of the sentence is either gpgga or gprmc
 		count = 0;//initiate count
 		digits = 0;//initiate digits
 		for(pos = 7;pos <= 12; pos++){//loop for finding the specific area in the sentence that holds the fix time 
