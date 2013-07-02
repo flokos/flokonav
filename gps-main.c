@@ -6,8 +6,8 @@ main ()
   wiringPiSetup () ;//setups the  gpio pins 
   pinMode (1, INPUT) ;//declares gpio 18 as input 
   count = 0;
-  
-  while((serial=serialOpen("/dev/ttyAMA0",4800))>0)//if the gps has succesfully concted with the raspi do the following 
+  serial=serialOpen("/dev/ttyAMA0",4800);
+  while(serialDataAvail(serial)!=-1)//if the gps has succesfully concted with the raspi do the following 
   {
     switch_state = digitalRead(1);//switch for reconrding  state 
     if(switch_state == 1){
