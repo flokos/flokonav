@@ -35,3 +35,28 @@ void get_sentence(char *inData[255],int *pos){//get the next nmea sentence
        }
  }
 
+int get_type(char *inData){//function the returns the type of the  sentence
+	int pos,output;
+	char temp[6];//temporary array to put in the actuall type of the sentence 
+	for(pos = 0;pos <= 6;pos++){
+		temp[pos] = inData[pos];//copies the type of  the sentence to the temporary array
+	}
+	if(strcmp(temp,"$GPGGA") == 0){//tests if the type of the sentence is gpgga
+                output = 1;//returns 1 if it is gpgga
+        }
+	else if(strcmp(temp,"$GPGSA") == 0){// tests if the type of the sentence is gpgsa
+		output = 2;//returns 2 if its gpgsa 
+	}
+	else if(strcmp(temp,"$GPGSV") == 0){// tests if the type of the sentence is gpgsv
+                output = 3;//returns 3 if it is gpgsv
+        }
+	else if(strcmp(temp,"$GPRMC") == 0){// tests if the type of the sentence is gprmc
+                output = 4;//returns 4 if it is gprmc
+        }
+	else 
+		output = 0;//returns 0 if the type of the sentence is either corrupt or not supported .
+	return output;//returns the output of the function 
+}
+
+
+
