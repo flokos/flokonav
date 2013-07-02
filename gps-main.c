@@ -59,4 +59,23 @@ int get_type(char *inData){//function the returns the type of the  sentence
 }
 
 
-
+void get_fix_time(char *inData,char *fix_time){
+	int type = get_type(*inData);//get the sentence type 
+	int digits;//position index in the fix_time array
+	int count;//counts the 2 digits cycle to fill the fix_time array
+        if(type == 1 || type == 4){//test if type of the sentence is either gpgga or gprmc
+		count = 0;//initiate count
+		digits = 0;//initiate digits
+		for(pos = 7;pos <= 12; pos++){//loop for finding the specific area in the sentence that holds the fix time 
+			digits++;//continues to the next char of the fix time 
+			if(count==2){//check if  2 digits of the fix time have  been passed to the array of the fix time and adds ':' to the next  element of the array 
+				fix_time[digits]=':';//add ':' to an element of the fix time array
+				count = 0;//resets 2 digits cycle
+			}
+			else {//otherwise
+				fix_time[digits] = inData[pos];//places the current digit to the fix time array
+				count++;//continues to the next digit of the 2 digits cycle 
+			}
+		}
+	}
+}
