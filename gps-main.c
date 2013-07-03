@@ -1,5 +1,7 @@
 #include <wiringPi.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #define ARRAY_SIZE(arr) (sizeof(arr)/sizeof(arr[0]))
 
 main ()
@@ -24,13 +26,13 @@ main ()
   }
 
 }
-void get_sentence(char *inData[255],int *pos){//get the next nmea sentence 
-        char inChar = -1;//character read
-        pos = 0;//index into array,where to store the character  
+void get_sentence(char *inData[255],int *serial){//get the next nmea sentence 
+        char inChar;//character read
+        int pos = 0;//index into array,where to store the character  
         while(serialDataAvail(serial)){//If data is being sent to the seria port  do the following
 	       inChar = serialGetchar(serial);//Read the next character 
                //fprintf9stdout,"%c",inChar);
-	       inData[pos] = inChar;//save character read into the sentence 
+	       *inData[pos] = inChar;//save character read into the sentence 
 	       pos++;//go to the next character position
 	       if(inChar == 13){//if the character read is carriage return  then break loop 
 		 break;
@@ -63,8 +65,8 @@ int get_type(char *inData){//function the returns the type of the  sentence
 
 void split(char *inData,char *info[], int n) {
         int pos;
-	char *info[0] = strtok(inData,",");
-        for (pos = 1;pos < n; pos++)
+	*info[0] = strtok(inData,",");
+        for (pos = 1;pos < n; pos++){
                 info[pos] = strtok(NULL,",");
 	} 
 }
@@ -78,7 +80,7 @@ void get_fix_time(char *inData,char *fix_time){
 		strcpy(fix_time,info[1]);
 	}
 	if(type == 4){
-		*info[] = malloc(sizeof(char *)*12);
+		info = malloc(sizeof(char *)*12);
 		split(inData,info,12);
 		strcpy(fix_time,info[3]);
 	}
