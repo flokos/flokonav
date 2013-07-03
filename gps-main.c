@@ -65,7 +65,7 @@ int get_type(char *inData){//function the returns the type of the  sentence
 
 void split(char *inData,char *info[], int n) {
         int pos;
-	*info[0] = strtok(inData,",");
+	info[0] = strtok(inData,",");
         for (pos = 1;pos < n; pos++){
                 info[pos] = strtok(NULL,",");
 	} 
