@@ -47,7 +47,7 @@ int get_type(char *inData){//function the returns the type of the  sentence
 	else if(strcmp(temp,"$GPGSA") == 0){// tests if the type of the sentence is gpgsa
 		output = 2;//returns 2 if its gpgsa 
 	}
-	else if(strcmp(temp,"$GPGSV") == 0){// tests if the type of the sentence is gpgsv
+	else if(strcmp(temp,"$GPGSV") == 0){// tests if the type of the sentence is gpgsv .
                 output = 3;//returns 3 if it is gpgsv
         }
 	else if(strcmp(temp,"$GPRMC") == 0){// tests if the type of the sentence is gprmc
